@@ -1,8 +1,9 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\RequestData;
+namespace App\Http\RequestData;
 
+use App\Framework\RequestTransformer\RequestDataInterface;
 use JsonSerializable;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -10,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Class TeacherScheduleRequestGetData
  *
- * @package App\RequestData
+ * @package App\Http\RequestData
  */
 final class TeacherScheduleRequestGetData implements RequestDataInterface, JsonSerializable
 {

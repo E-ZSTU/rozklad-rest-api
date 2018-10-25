@@ -1,17 +1,16 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Controller;
+namespace App\Http\Controller;
 
-use App\RequestData\TeacherScheduleRequestGetData;
+use App\Http\RequestData\TeacherScheduleRequestGetData;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class TeacherScheduleController
  *
- * @package App\Controller
+ * @package App\Http\Controller
  */
 final class TeacherScheduleController
 {

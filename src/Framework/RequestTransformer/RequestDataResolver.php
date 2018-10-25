@@ -1,9 +1,8 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Request\ArgumentValueResolver;
+namespace App\Framework\RequestTransformer;
 
-use App\RequestData\RequestDataInterface;
 use ReflectionClass;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;
@@ -14,7 +13,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 /**
  * Class RequestDataResolver
  *
- * @package App\Request\ArgumentValueResolver
+ * @package App\Framework\RequestTransformer
  */
 final class RequestDataResolver implements ArgumentValueResolverInterface
 {
@@ -60,7 +59,7 @@ final class RequestDataResolver implements ArgumentValueResolverInterface
      *
      * @return \Generator
      */
-    public function resolve(Request $request, ArgumentMetadata $argument)
+    public function resolve(Request $request, ArgumentMetadata $argument): \Generator
     {
         $class = $argument->getType();
         $data = new $class($request);
