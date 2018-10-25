@@ -1,18 +1,19 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\RequestData;
+namespace App\Http\RequestData;
 
+use App\Framework\RequestTransformer\RequestDataInterface;
 use JsonSerializable;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class TeacherScheduleRequestGetData
+ * Class TeacherScheduleGetRequestData
  *
- * @package App\RequestData
+ * @package App\Http\RequestData
  */
-final class TeacherScheduleRequestGetData implements RequestDataInterface, JsonSerializable
+final class TeacherScheduleGetRequestData implements RequestDataInterface, JsonSerializable
 {
     /**
      * @Assert\NotBlank()
@@ -45,7 +46,7 @@ final class TeacherScheduleRequestGetData implements RequestDataInterface, JsonS
      * which is a value of any type other than a resource.
      * @since 5.4.0
      */
-    public function jsonSerialize():array
+    public function jsonSerialize(): array
     {
         return [
             'name' => $this->name,

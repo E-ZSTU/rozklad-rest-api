@@ -1,12 +1,12 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\RequestData;
+namespace App\Framework\RequestTransformer;
 
 /**
  * Interface RequestDataInterface
  *
- * @package App\RequestData
+ * @package App\Framework\RequestTransformer
  */
 interface RequestDataInterface
 {
