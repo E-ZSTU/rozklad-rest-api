@@ -14,9 +14,24 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class TeacherRepository extends ServiceEntityRepository
 {
+    // TODO: add to container configuration
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Teacher::class);
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return Teacher[]
+     */
+    public function findAllByTeacherName(string $name): array
+    {
+        return $this->createQueryBuilder('t')
+            ->where('t.teacher_name like :teacherName')
+            ->setParameter('teacherName', "%$name%")
+            ->getQuery()
+            ->getResult();
     }
 
 //    /**

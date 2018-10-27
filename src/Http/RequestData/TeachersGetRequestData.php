@@ -3,17 +3,17 @@ declare(strict_types = 1);
 
 namespace App\Http\RequestData;
 
+use App\Domain\Teacher\Search\TeacherScheduleSearchCriteriaInterface;
 use App\Framework\RequestTransformer\RequestDataInterface;
-use JsonSerializable;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class TeacherScheduleGetRequestData
+ * Class TeachersGetRequestData
  *
  * @package App\Http\RequestData
  */
-final class TeacherScheduleGetRequestData implements RequestDataInterface, JsonSerializable
+final class TeachersGetRequestData implements RequestDataInterface, TeacherScheduleSearchCriteriaInterface
 {
     /**
      * @Assert\NotBlank()
@@ -37,19 +37,5 @@ final class TeacherScheduleGetRequestData implements RequestDataInterface, JsonS
     public function getName(): string
     {
         return $this->name;
-    }
-
-    /**
-     * Specify data which should be serialized to JSON
-     * @link  http://php.net/manual/en/jsonserializable.jsonserialize.php
-     * @return mixed data which can be serialized by <b>json_encode</b>,
-     * which is a value of any type other than a resource.
-     * @since 5.4.0
-     */
-    public function jsonSerialize(): array
-    {
-        return [
-            'name' => $this->name,
-        ];
     }
 }
