@@ -36,3 +36,6 @@ services:
             - '@validator'
         tags:
             - { name: controller.request_value_resolver, priority: 50 }
+
+#    App\ORM\Repository\TeacherRepository:
+#        arguments: ['@doctrine.orm.entity_manager', 'App\ORM\Entity\Teacher']
