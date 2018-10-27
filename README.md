@@ -8,4 +8,9 @@
 $ docker-composer up -d
 ```
 
-2. You can open rest api by `http:127.0.0.1:100`  
+2. restore database dump from `data/schedule-25.sql` to mysql.
+- NOTE: we should do it with `docker-composer up -d`
+
+## Uses
+
+1. You can open rest api by `http:127.0.0.1:100`  
