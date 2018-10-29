@@ -6,6 +6,7 @@ namespace App\Framework\RequestMapper;
 use Exception;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Throwable;
@@ -69,6 +70,6 @@ class RequestMapperException extends Exception implements Responsable
             $result[] = $localResult;
         }
 
-        return JsonResponse::create($result);
+        return JsonResponse::create($result)->setStatusCode(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 }

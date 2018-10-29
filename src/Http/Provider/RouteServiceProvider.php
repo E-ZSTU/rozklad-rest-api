@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Http;
+namespace App\Http\Provider;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -9,20 +9,10 @@ use Illuminate\Support\Facades\Route;
 /**
  * Class RouteServiceProvider
  *
- * @package App\Http
+ * @package App\Http\Provider
  */
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @return void
-     */
-    public function boot(): void
-    {
-        parent::boot();
-    }
-
     /**
      * Define the routes for the application.
      *
