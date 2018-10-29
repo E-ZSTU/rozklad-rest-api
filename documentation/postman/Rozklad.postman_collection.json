@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "05a7f495-7392-4832-9f01-a4b800ed93ba",
+		"name": "Rozklad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Teacher Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:8000/teacher-search?name=Морозов А.В.",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"teacher-search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Морозов А.В."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teacher Schedule",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:8000/teacher-schedule/11111111111",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"teacher-schedule",
+						"11111111111"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

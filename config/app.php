@@ -151,7 +151,7 @@ return [
         /**
          * Application Service Providers...
          */
-        App\Http\RouteServiceProvider::class,
+        App\Http\HttpServiceProvider::class,
         App\Framework\RequestMapper\RequestMapperServiceProvider::class,
 
     ],
