@@ -4,9 +4,9 @@ declare(strict_types = 1);
 namespace App\Http\Controller;
 
 use App\Domain\Teacher\Search\TeacherScheduleSearchManager;
+use App\Framework\RequestMapper\RequestMapper;
 use App\Http\RequestData\TeachersGetRequestData;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class TeacherSearchController
@@ -16,28 +16,38 @@ use Symfony\Component\Routing\Annotation\Route;
 class TeacherSearchController
 {
     /**
+     * @var RequestMapper
+     */
+    private $requestMapper;
+
+    /**
      * @var TeacherScheduleSearchManager
      */
     private $teacherScheduleSearchManager;
 
     /**
-     * TeacherController constructor.
+     * TeacherSearchController constructor.
      *
+     * @param RequestMapper                $requestMapper
      * @param TeacherScheduleSearchManager $teacherScheduleSearchManager
      */
-    public function __construct(TeacherScheduleSearchManager $teacherScheduleSearchManager)
-    {
+    public function __construct(
+        RequestMapper $requestMapper,
+        TeacherScheduleSearchManager $teacherScheduleSearchManager
+    ) {
+        $this->requestMapper = $requestMapper;
         $this->teacherScheduleSearchManager = $teacherScheduleSearchManager;
     }
 
     /**
-     * @Route(methods={"GET"}, path="/teacher-search")
-     * @param TeachersGetRequestData $payload
-     *
      * @return JsonResponse
+     * @throws \App\Framework\RequestMapper\RequestMapperException
      */
-    public function __invoke(TeachersGetRequestData $payload): JsonResponse
+    public function __invoke(): JsonResponse
     {
+        /** @var TeachersGetRequestData $payload */
+        $payload = $this->requestMapper->map(TeachersGetRequestData::class);
+
         return JsonResponse::create(
             $this->teacherScheduleSearchManager->find($payload)
         );

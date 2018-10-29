@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace App\Domain\Teacher\Search\ResultData;
 
+use App\ORM\Collection\TeacherCollection;
+
 /**
  * Class TeacherSearchSuggestResultData
  *
@@ -11,24 +13,24 @@ namespace App\Domain\Teacher\Search\ResultData;
 final class TeacherSearchSuggestResultData extends AbstractTeacherSearchResultData
 {
     /**
-     * @var array
+     * @var TeacherCollection
      */
     private $data;
 
     /**
      * TeacherSearchSuggestResultData constructor.
      *
-     * @param array $data
+     * @param TeacherCollection $data
      */
-    public function __construct(array $data)
+    public function __construct(TeacherCollection $data)
     {
         $this->data = $data;
     }
 
     /**
-     * @return array
+     * @return TeacherCollection
      */
-    public function suggest(): array
+    public function suggest(): TeacherCollection
     {
         return $this->data;
     }

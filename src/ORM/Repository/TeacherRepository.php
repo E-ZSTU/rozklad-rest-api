@@ -1,65 +1,41 @@
 <?php
+declare(strict_types = 1);
 
 namespace App\ORM\Repository;
 
-use App\ORM\Entity\Teacher;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bridge\Doctrine\RegistryInterface;
+use App\ORM\Collection\TeacherCollection;
+use App\ORM\Model\Teacher;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
- * @method Teacher|null find($id, $lockMode = null, $lockVersion = null)
- * @method Teacher|null findOneBy(array $criteria, array $orderBy = null)
- * @method Teacher[]    findAll()
- * @method Teacher[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * Class TeacherRepository
+ *
+ * @package App\ORM\Repository
  */
-class TeacherRepository extends ServiceEntityRepository
+class TeacherRepository
 {
-    // TODO: add to container configuration
-    public function __construct(RegistryInterface $registry)
+    /**
+     * @var Teacher
+     */
+    private $teacher;
+
+    /**
+     * TeacherRepository constructor.
+     *
+     * @param Teacher $teacher
+     */
+    public function __construct(Teacher $teacher)
     {
-        parent::__construct($registry, Teacher::class);
+        $this->teacher = $teacher;
     }
 
     /**
      * @param string $name
      *
-     * @return Teacher[]
+     * @return Collection|TeacherCollection|Teacher[]
      */
-    public function findAllByTeacherName(string $name): array
+    public function findAllByTeacherName(string $name): TeacherCollection
     {
-        return $this->createQueryBuilder('t')
-            ->where('t.teacher_name like :teacherName')
-            ->setParameter('teacherName', "%$name%")
-            ->getQuery()
-            ->getResult();
+        return $this->teacher->newQuery()->where('teacher_name', 'like', "%$name%")->get();
     }
-
-//    /**
-//     * @return Teacher[] Returns an array of Teacher objects
-//     */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Teacher
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

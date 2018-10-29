@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Domain\Teacher\Search\ResultData;
 
-use App\ORM\Entity\Teacher;
+use App\ORM\Model\Teacher;
 
 /**
  * Class TeacherSearchSuccessResultData

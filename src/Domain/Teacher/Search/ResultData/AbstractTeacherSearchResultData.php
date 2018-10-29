@@ -3,7 +3,8 @@ declare(strict_types = 1);
 
 namespace App\Domain\Teacher\Search\ResultData;
 
-use App\ORM\Entity\Teacher;
+use App\ORM\Collection\TeacherCollection;
+use App\ORM\Model\Teacher;
 use JsonSerializable;
 
 /**
@@ -22,11 +23,11 @@ abstract class AbstractTeacherSearchResultData implements JsonSerializable
     }
 
     /**
-     * @return array
+     * @return TeacherCollection
      */
-    public function suggest(): array
+    public function suggest(): TeacherCollection
     {
-        return [];
+        return new TeacherCollection();
     }
 
     /**
