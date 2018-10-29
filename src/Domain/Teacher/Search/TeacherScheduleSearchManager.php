@@ -3,9 +3,9 @@ declare(strict_types = 1);
 
 namespace App\Domain\Teacher\Search;
 
+use App\Domain\Teacher\Search\ResultData\AbstractTeacherSearchResultData;
 use App\Domain\Teacher\Search\ResultData\TeacherSearchSuccessResultData;
 use App\Domain\Teacher\Search\ResultData\TeacherSearchSuggestResultData;
-use App\Domain\Teacher\Search\ResultData\AbstractTeacherSearchResultData;
 use App\ORM\Repository\TeacherRepository;
 
 /**
@@ -39,8 +39,10 @@ class TeacherScheduleSearchManager
     {
         $teachers = $this->teacherRepository->findAllByTeacherName($criteria->getName());
 
-        if (\count($teachers) > 0 && $teachers[0]->getTeacherName() === $criteria->getName()) {
-            return new TeacherSearchSuccessResultData($teachers[0]);
+        $firstTeacher = $teachers->first();
+
+        if ($firstTeacher && $firstTeacher->teacher_name === $criteria->getName()) {
+            return new TeacherSearchSuccessResultData($firstTeacher);
         }
 
         return new TeacherSearchSuggestResultData($teachers);
