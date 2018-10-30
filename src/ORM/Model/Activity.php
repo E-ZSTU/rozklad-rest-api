@@ -26,7 +26,7 @@ class Activity extends Model
     /**
      * @return Day
      */
-    public function getDat(): Day
+    public function getDay(): Day
     {
         return $this->getRelationValue('day');
     }

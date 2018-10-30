@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Day
  *
- * @property int    $day_id
- * @property string $day_name
+ * @property int    $activity_tag_id
+ * @property string $activity_tag_name
  *
  * @package App\ORM\Model
  */

@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * Class Teacher
  *
  * @property string|null $teacher_name
+ * @property int|null $teacher_id
  *
  * @package App\ORM\Model
  */
