@@ -1,42 +1,45 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Http\Transformer\TeacherSchedule;
+namespace App\Http\Transformer\Schedule;
 
-use App\ORM\Model\Teacher;
+use App\ORM\Model\Room;
 use League\Fractal\Resource\Collection;
 use League\Fractal\TransformerAbstract;
 
 /**
- * Class TeacherScheduleTransformer
+ * Class RoomScheduleTransformer
  *
- * @package App\Http\Transformer\TeacherSchedule
+ * @package App\Http\Transformer\Schedule
  */
-class TeacherScheduleTransformer extends TransformerAbstract
+class RoomScheduleTransformer extends TransformerAbstract
 {
+    /**
+     * @var array
+     */
     protected $defaultIncludes = ['activities'];
 
     /**
-     * @param Teacher $teacher
+     * @param Room $room
      *
      * @return array
      */
-    public function transform(Teacher $teacher): array
+    public function transform(Room $room): array
     {
         return [
-            'teacher_name' => $teacher->teacher_name,
-            'teacher_id' => $teacher->teacher_id,
+            'room_id' => $room->room_id,
+            'room_name' => $room->room_name,
         ];
     }
 
     /**
-     * @param Teacher $teacher
+     * @param Room $room
      *
-     * @return \League\Fractal\Resource\Collection
+     * @return Collection
      */
-    public function includeActivities(Teacher $teacher): Collection
+    public function includeActivities(Room $room): Collection
     {
-        $teacher->load([
+        $room->load([
             'activities.day',
             'activities.hour',
             'activities.room',
@@ -44,7 +47,7 @@ class TeacherScheduleTransformer extends TransformerAbstract
             'activities.subgroup',
             'activities.subject',
         ]);
-        $activities = $teacher->getActivities()->groupBy(['day.day_name', 'hour.hour_name']);
+        $activities = $room->getActivities()->groupBy(['day.day_name', 'hour.hour_name']);
 
         $newCollection = new \Illuminate\Database\Eloquent\Collection();
         $activities->each(function (\Illuminate\Database\Eloquent\Collection $collection) use ($newCollection) {

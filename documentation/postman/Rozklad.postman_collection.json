@@ -59,7 +59,7 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "http://127.0.0.1:8000/teacher-schedule/11111111111",
+					"raw": "http://127.0.0.1:8000/teacher-schedule/141",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,7 +70,40 @@
 					"port": "8000",
 					"path": [
 						"teacher-schedule",
-						"11111111111"
+						"141"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Room Schedule",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:8000/room-schedule/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"room-schedule",
+						"5"
 					]
 				}
 			},

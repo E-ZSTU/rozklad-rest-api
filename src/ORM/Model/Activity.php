@@ -34,6 +34,23 @@ class Activity extends Model
     /**
      * @return BelongsTo
      */
+    public function teacher(): BelongsTo
+    {
+        return $this->belongsTo(Teacher::class, 'activity_teacher_id', 'teacher_id');
+    }
+
+    /**
+     * @return Teacher
+     */
+    public function getTeacher(): Teacher
+    {
+        return $this->getRelationValue('teacher');
+    }
+
+
+    /**
+     * @return BelongsTo
+     */
     public function hour(): BelongsTo
     {
         return $this->belongsTo(Hour::class, 'activity_hour_id', 'hour_id');
