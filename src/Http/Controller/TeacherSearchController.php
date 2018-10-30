@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Http\Controller;
 
-use App\Domain\Teacher\Search\TeacherScheduleSearchManager;
+use App\Domain\Teacher\Search\TeacherSearchManager;
 use App\Framework\RequestMapper\RequestMapper;
 use App\Http\RequestData\TeachersGetRequestData;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -21,19 +21,19 @@ class TeacherSearchController
     private $requestMapper;
 
     /**
-     * @var TeacherScheduleSearchManager
+     * @var TeacherSearchManager
      */
     private $teacherScheduleSearchManager;
 
     /**
      * TeacherSearchController constructor.
      *
-     * @param RequestMapper                $requestMapper
-     * @param TeacherScheduleSearchManager $teacherScheduleSearchManager
+     * @param RequestMapper        $requestMapper
+     * @param TeacherSearchManager $teacherScheduleSearchManager
      */
     public function __construct(
         RequestMapper $requestMapper,
-        TeacherScheduleSearchManager $teacherScheduleSearchManager
+        TeacherSearchManager $teacherScheduleSearchManager
     ) {
         $this->requestMapper = $requestMapper;
         $this->teacherScheduleSearchManager = $teacherScheduleSearchManager;

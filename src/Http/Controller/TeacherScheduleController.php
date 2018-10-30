@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Http\Controller;
 
-use App\Http\Transformer\TeacherScheduleTransformer;
+use App\Http\Transformer\TeacherSchedule\TeacherScheduleTransformer;
 use App\ORM\Model\Teacher;
 use Illuminate\Http\JsonResponse;
 use League\Fractal\Manager as FractalManager;

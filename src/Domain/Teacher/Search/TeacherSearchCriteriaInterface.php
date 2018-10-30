@@ -4,11 +4,11 @@ declare(strict_types = 1);
 namespace App\Domain\Teacher\Search;
 
 /**
- * Interface TeacherScheduleSearchCriteriaInterface
+ * Interface TeacherSearchCriteriaInterface
  *
  * @package App\Domain\Teacher\Search
  */
-interface TeacherScheduleSearchCriteriaInterface
+interface TeacherSearchCriteriaInterface
 {
     /**
      * Get teacher name.

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace App\Http\Transformer;
+namespace App\Http\Transformer\TeacherSchedule;
 
 use App\ORM\Model\Teacher;
 use League\Fractal\Resource\Collection;
@@ -10,7 +10,7 @@ use League\Fractal\TransformerAbstract;
 /**
  * Class TeacherScheduleTransformer
  *
- * @package App\Http\Transformer
+ * @package App\Http\Transformer\TeacherSchedule
  */
 class TeacherScheduleTransformer extends TransformerAbstract
 {

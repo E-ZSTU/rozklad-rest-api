@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Http\RequestData;
 
-use App\Domain\Teacher\Search\TeacherScheduleSearchCriteriaInterface;
+use App\Domain\Teacher\Search\TeacherSearchCriteriaInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @package App\Http\RequestData
  */
-final class TeachersGetRequestData implements TeacherScheduleSearchCriteriaInterface
+final class TeachersGetRequestData implements TeacherSearchCriteriaInterface
 {
     /**
      * @Assert\NotBlank()

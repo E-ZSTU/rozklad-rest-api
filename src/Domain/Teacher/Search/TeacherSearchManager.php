@@ -9,11 +9,11 @@ use App\Domain\Teacher\Search\ResultData\TeacherSearchSuggestResultData;
 use App\ORM\Repository\TeacherRepository;
 
 /**
- * Class TeacherScheduleSearchManager
+ * Class TeacherSearchManager
  *
  * @package App\Domain\Teacher\Search
  */
-class TeacherScheduleSearchManager
+class TeacherSearchManager
 {
     /**
      * @var TeacherRepository
@@ -31,11 +31,11 @@ class TeacherScheduleSearchManager
     }
 
     /**
-     * @param TeacherScheduleSearchCriteriaInterface $criteria
+     * @param TeacherSearchCriteriaInterface $criteria
      *
      * @return AbstractTeacherSearchResultData
      */
-    public function find(TeacherScheduleSearchCriteriaInterface $criteria): AbstractTeacherSearchResultData
+    public function find(TeacherSearchCriteriaInterface $criteria): AbstractTeacherSearchResultData
     {
         $teachers = $this->teacherRepository->findAllByTeacherName($criteria->getName());
 
