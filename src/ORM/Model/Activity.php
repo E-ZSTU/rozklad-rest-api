@@ -47,7 +47,6 @@ class Activity extends Model
         return $this->getRelationValue('teacher');
     }
 
-
     /**
      * @return BelongsTo
      */

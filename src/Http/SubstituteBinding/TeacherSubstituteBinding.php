@@ -33,6 +33,7 @@ class TeacherSubstituteBinding
      * @param $value
      *
      * @return Teacher
+     * @throws SubstituteBindingException
      */
     public function bind($value): Teacher
     {

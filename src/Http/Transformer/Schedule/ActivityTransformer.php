@@ -27,8 +27,9 @@ class ActivityTransformer extends TransformerAbstract
         $groupNames = implode(',', $collection->map(function (Activity $activity) {
             $subgroupName = $activity->getSubgroup()->subgroup_name;
 
-            if ($activity->getTag()->activity_tag_name === 'Лекція') {
-                return substr($subgroupName, 0, strpos($subgroupName, '['));
+            if ($activity->getTag()->activity_tag_name === 'Лекція'
+                && $subgroupSeparator = strpos($subgroupName, '[')) {
+                return substr($subgroupName, 0, $subgroupSeparator);
             }
 
             return $subgroupName;

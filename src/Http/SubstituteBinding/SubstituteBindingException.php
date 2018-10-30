@@ -3,10 +3,10 @@ declare(strict_types = 1);
 
 namespace App\Http\SubstituteBinding;
 
+use Exception;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
-use Mockery\Exception;
 
 /**
  * Class SubstituteBindingException

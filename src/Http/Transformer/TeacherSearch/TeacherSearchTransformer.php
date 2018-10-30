@@ -35,7 +35,7 @@ class TeacherSearchTransformer extends TransformerAbstract
     /**
      * @param AbstractTeacherSearchResultData $data
      *
-     * @return \League\Fractal\Resource\Item|\League\Fractal\Resource\NullResource
+     * @return ResourceAbstract
      */
     public function includeSearched(AbstractTeacherSearchResultData $data): ResourceAbstract
     {
