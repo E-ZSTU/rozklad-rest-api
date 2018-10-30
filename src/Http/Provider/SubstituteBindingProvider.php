@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace App\Http\Provider;
 
+use App\Http\SubstituteBinding\RoomSubstituteBinding;
 use App\Http\SubstituteBinding\TeacherSubstituteBinding;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
@@ -21,6 +22,8 @@ class SubstituteBindingProvider extends ServiceProvider
     {
         /** @var Router $router */
         $router = $this->app->make(Router::class);
+
+        $router->bind('room', RoomSubstituteBinding::class);
         $router->bind('teacher', TeacherSubstituteBinding::class);
     }
 }

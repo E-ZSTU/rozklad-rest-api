@@ -3,18 +3,18 @@ declare(strict_types = 1);
 
 namespace App\Http\Controller;
 
-use App\Http\Transformer\Schedule\TeacherScheduleTransformer;
-use App\ORM\Model\Teacher;
+use App\Http\Transformer\Schedule\RoomScheduleTransformer;
+use App\ORM\Model\Room;
 use Illuminate\Http\JsonResponse;
 use League\Fractal\Manager as FractalManager;
 use League\Fractal\Resource\Item;
 
 /**
- * Class TeacherScheduleController
+ * Class RoomScheduleController
  *
  * @package App\Http\Controller
  */
-class TeacherScheduleController
+class RoomScheduleController
 {
     /**
      * @var FractalManager
@@ -32,14 +32,14 @@ class TeacherScheduleController
     }
 
     /**
-     * @param Teacher $teacher
+     * @param Room $room
      *
      * @return JsonResponse
      */
-    public function __invoke(Teacher $teacher): JsonResponse
+    public function __invoke(Room $room): JsonResponse
     {
         return JsonResponse::create(
-            $this->fractalManager->createData(new Item($teacher, new TeacherScheduleTransformer()))->toArray()
+            $this->fractalManager->createData(new Item($room, new RoomScheduleTransformer()))->toArray()
         );
     }
 }
