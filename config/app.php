@@ -152,6 +152,8 @@ return [
          * Application Service Providers...
          */
         App\Http\HttpServiceProvider::class,
+
+        App\Framework\Fractal\FractalServiceProvider::class,
         App\Framework\RequestMapper\RequestMapperServiceProvider::class,
 
     ],
