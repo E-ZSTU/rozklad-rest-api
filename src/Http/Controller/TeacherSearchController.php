@@ -6,6 +6,9 @@ namespace App\Http\Controller;
 use App\Domain\Teacher\Search\TeacherSearchManager;
 use App\Framework\RequestMapper\RequestMapper;
 use App\Http\RequestData\TeachersGetRequestData;
+use App\Http\Transformer\TeacherSearch\TeacherSearchTransformer;
+use League\Fractal\Manager as FractalManager;
+use League\Fractal\Resource\Item;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
@@ -21,6 +24,11 @@ class TeacherSearchController
     private $requestMapper;
 
     /**
+     * @var FractalManager
+     */
+    private $fractalManager;
+
+    /**
      * @var TeacherSearchManager
      */
     private $teacherScheduleSearchManager;
@@ -29,13 +37,16 @@ class TeacherSearchController
      * TeacherSearchController constructor.
      *
      * @param RequestMapper        $requestMapper
+     * @param FractalManager       $fractalManager
      * @param TeacherSearchManager $teacherScheduleSearchManager
      */
     public function __construct(
         RequestMapper $requestMapper,
+        FractalManager $fractalManager,
         TeacherSearchManager $teacherScheduleSearchManager
     ) {
         $this->requestMapper = $requestMapper;
+        $this->fractalManager = $fractalManager;
         $this->teacherScheduleSearchManager = $teacherScheduleSearchManager;
     }
 
@@ -48,8 +59,10 @@ class TeacherSearchController
         /** @var TeachersGetRequestData $payload */
         $payload = $this->requestMapper->map(TeachersGetRequestData::class);
 
+        $teacherSearchResult = $this->teacherScheduleSearchManager->find($payload);
+
         return JsonResponse::create(
-            $this->teacherScheduleSearchManager->find($payload)
+            $this->fractalManager->createData(new Item($teacherSearchResult, new TeacherSearchTransformer()))->toArray()
         );
     }
 }
