@@ -42,6 +42,7 @@ class ActivityTransformer extends TransformerAbstract
             'tag' => $activity->getTag()->activity_tag_name,
             'day' => $activity->getDay()->day_name,
             'teacher_name' => $activity->getTeacher()->teacher_name,
+            'subject_name' => $activity->getSubject()->subject_name,
         ];
     }
 }
