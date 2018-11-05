@@ -37,6 +37,7 @@ class ActivityTransformer extends TransformerAbstract
 
         return [
             'hour_name' => $activity->getHour()->hour_name,
+            'hour_id' => $activity->getHour()->hour_id,
             'groups' => $groupNames,
             'room' => $activity->getRoom()->room_name,
             'tag' => $activity->getTag()->activity_tag_name,
