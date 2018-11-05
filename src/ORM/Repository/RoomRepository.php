@@ -3,9 +3,8 @@ declare(strict_types = 1);
 
 namespace App\ORM\Repository;
 
-use App\ORM\Collection\TeacherCollection;
+use App\ORM\Collection\RoomCollection;
 use App\ORM\Exception\RoomNotFoundException;
-use App\ORM\Exception\TeacherNotFoundException;
 use App\ORM\Model\Room;
 use App\ORM\Model\Teacher;
 use Illuminate\Database\Eloquent\Collection;
@@ -31,6 +30,16 @@ class RoomRepository
     public function __construct(Room $room)
     {
         $this->room = $room;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return Collection|RoomCollection|Teacher[]
+     */
+    public function findAllByRoomName(string $name): RoomCollection
+    {
+        return $this->room->newQuery()->where('room_name', 'like', "%$name%")->get();
     }
 
     /**

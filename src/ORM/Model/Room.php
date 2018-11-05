@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace App\ORM\Model;
 
+use App\ORM\Collection\RoomCollection;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * Class Hour
  *
- * @property int $room_id
+ * @property int    $room_id
  * @property string $room_name
  *
  * @package App\ORM\Model
@@ -31,5 +32,15 @@ class Room extends Model
     public function getActivities(): Collection
     {
         return $this->getRelationValue('activities');
+    }
+
+    /**
+     * @param array $models
+     *
+     * @return RoomCollection
+     */
+    public function newCollection(array $models = []): RoomCollection
+    {
+        return new RoomCollection($models);
     }
 }
