@@ -18,6 +18,14 @@ class FractalServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->registerFractalManager();
+    }
+
+    /**
+     * @return void
+     */
+    private function registerFractalManager(): void
+    {
         $this->app->singleton(Manager::class);
         /** @var Manager $fractalManager */
         $fractalManager = $this->app->make(Manager::class);
