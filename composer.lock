@@ -956,12 +956,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:TBlindaruk/request-mapper-lm.git",
-                "reference": "98b44095321dac0447921eaa9cf650d19a0c8719"
+                "reference": "35525117616befc6987ff56a200a7dd3e6d40556"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TBlindaruk/request-mapper-lm/zipball/98b44095321dac0447921eaa9cf650d19a0c8719",
-                "reference": "98b44095321dac0447921eaa9cf650d19a0c8719",
+                "url": "https://api.github.com/repos/TBlindaruk/request-mapper-lm/zipball/35525117616befc6987ff56a200a7dd3e6d40556",
+                "reference": "35525117616befc6987ff56a200a7dd3e6d40556",
                 "shasum": ""
             },
             "require": {
@@ -995,7 +995,7 @@
                 "source": "https://github.com/TBlindaruk/request-mapper-lm/tree/master",
                 "issues": "https://github.com/TBlindaruk/request-mapper-lm/issues"
             },
-            "time": "2018-12-15 21:39:24"
+            "time": "2018-12-15 23:20:01"
         },
         {
             "name": "monolog/monolog",
