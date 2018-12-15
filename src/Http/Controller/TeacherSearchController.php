@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace App\Http\Controller;
 
 use App\Domain\Teacher\Search\TeacherSearchManager;
-use App\Framework\RequestMapper\RequestMapper;
 use App\Http\RequestData\TeachersGetRequestData;
 use App\Http\Transformer\TeacherSearch\TeacherSearchTransformer;
 use League\Fractal\Manager as FractalManager;
@@ -19,11 +18,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class TeacherSearchController
 {
     /**
-     * @var RequestMapper
-     */
-    private $requestMapper;
-
-    /**
      * @var FractalManager
      */
     private $fractalManager;
@@ -36,29 +30,22 @@ class TeacherSearchController
     /**
      * TeacherSearchController constructor.
      *
-     * @param RequestMapper        $requestMapper
      * @param FractalManager       $fractalManager
      * @param TeacherSearchManager $teacherScheduleSearchManager
      */
-    public function __construct(
-        RequestMapper $requestMapper,
-        FractalManager $fractalManager,
-        TeacherSearchManager $teacherScheduleSearchManager
-    ) {
-        $this->requestMapper = $requestMapper;
+    public function __construct(FractalManager $fractalManager, TeacherSearchManager $teacherScheduleSearchManager)
+    {
         $this->fractalManager = $fractalManager;
         $this->teacherScheduleSearchManager = $teacherScheduleSearchManager;
     }
 
     /**
+     * @param TeachersGetRequestData $payload
+     *
      * @return JsonResponse
-     * @throws \App\Framework\RequestMapper\RequestMapperException
      */
-    public function __invoke(): JsonResponse
+    public function __invoke(TeachersGetRequestData $payload): JsonResponse
     {
-        /** @var TeachersGetRequestData $payload */
-        $payload = $this->requestMapper->map(TeachersGetRequestData::class);
-
         $teacherSearchResult = $this->teacherScheduleSearchManager->find($payload);
 
         return JsonResponse::create(

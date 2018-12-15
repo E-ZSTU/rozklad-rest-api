@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace App\Http\Controller;
 
 use App\Domain\Room\Search\RoomSearchManager;
-use App\Framework\RequestMapper\RequestMapper;
 use App\Http\RequestData\RoomSearchRequestData;
 use App\Http\Transformer\RoomSearch\RoomSearchTransformer;
 use Illuminate\Http\JsonResponse;
@@ -19,11 +18,6 @@ use League\Fractal\Resource\Item;
 class RoomSearchController
 {
     /**
-     * @var RequestMapper
-     */
-    private $requestMapper;
-
-    /**
      * @var FractalManager
      */
     private $fractalManager;
@@ -36,28 +30,22 @@ class RoomSearchController
     /**
      * RoomSearchController constructor.
      *
-     * @param RequestMapper     $requestMapper
      * @param FractalManager    $fractalManager
      * @param RoomSearchManager $roomSearchManager
      */
-    public function __construct(
-        RequestMapper $requestMapper,
-        FractalManager $fractalManager,
-        RoomSearchManager $roomSearchManager
-    ) {
-        $this->requestMapper = $requestMapper;
+    public function __construct(FractalManager $fractalManager, RoomSearchManager $roomSearchManager)
+    {
         $this->fractalManager = $fractalManager;
         $this->roomSearchManager = $roomSearchManager;
     }
 
     /**
-     * @throws \App\Framework\RequestMapper\RequestMapperException
+     * @param RoomSearchRequestData $payload
+     *
+     * @return JsonResponse
      */
-    public function __invoke()
+    public function __invoke(RoomSearchRequestData $payload)
     {
-        /** @var RoomSearchRequestData $payload */
-        $payload = $this->requestMapper->map(RoomSearchRequestData::class);
-
         $result = $this->roomSearchManager->find($payload);
 
         return JsonResponse::create(
