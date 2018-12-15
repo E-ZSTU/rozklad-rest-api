@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace App\Http\RequestData;
 
 use App\Domain\Teacher\Search\TeacherSearchCriteriaInterface;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -15,19 +14,21 @@ use Symfony\Component\Validator\Constraints as Assert;
 final class TeachersGetRequestData implements TeacherSearchCriteriaInterface
 {
     /**
+     * @var string
+     *
      * @Assert\NotBlank()
      * @Assert\Type(type="string")
      */
     private $name;
 
     /**
-     * TeacherScheduleRequestGetData constructor.
+     * TeachersGetRequestData constructor.
      *
-     * @param Request $request
+     * @param array $data
      */
-    public function __construct(Request $request)
+    public function __construct(array $data)
     {
-        $this->name = $request->get('name');
+        $this->name = $data['name'] ?? null;
     }
 
     /**
