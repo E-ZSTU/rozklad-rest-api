@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace App\Http\RequestData;
 
 use App\Domain\Teacher\Search\TeacherSearchCriteriaInterface;
+use Maksi\RequestMapperL\DataTransferObject;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -11,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @package App\Http\RequestData
  */
-final class TeachersGetRequestData implements TeacherSearchCriteriaInterface
+final class TeachersGetRequestData extends DataTransferObject implements TeacherSearchCriteriaInterface
 {
     /**
      * @var string
@@ -22,11 +23,9 @@ final class TeachersGetRequestData implements TeacherSearchCriteriaInterface
     private $name;
 
     /**
-     * TeachersGetRequestData constructor.
-     *
      * @param array $data
      */
-    public function __construct(array $data)
+    protected function init(array $data): void
     {
         $this->name = $data['name'] ?? null;
     }
