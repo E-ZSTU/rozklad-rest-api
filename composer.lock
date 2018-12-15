@@ -956,22 +956,30 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:TBlindaruk/request-mapper-lm.git",
-                "reference": "e1d0f28a1ab9258dfbda8130e0f4c6b90f82ab94"
+                "reference": "98b44095321dac0447921eaa9cf650d19a0c8719"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TBlindaruk/request-mapper-lm/zipball/e1d0f28a1ab9258dfbda8130e0f4c6b90f82ab94",
-                "reference": "e1d0f28a1ab9258dfbda8130e0f4c6b90f82ab94",
+                "url": "https://api.github.com/repos/TBlindaruk/request-mapper-lm/zipball/98b44095321dac0447921eaa9cf650d19a0c8719",
+                "reference": "98b44095321dac0447921eaa9cf650d19a0c8719",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "^1.6",
                 "doctrine/cache": "^1.8",
+                "illuminate/contracts": "^5.7",
                 "illuminate/http": "^5.7",
                 "illuminate/support": "^5.7",
                 "symfony/validator": "^4.2"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Maksi\\RequestMapperL\\RequestMapperProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Maksi\\RequestMapperL\\": "src"
@@ -987,7 +995,7 @@
                 "source": "https://github.com/TBlindaruk/request-mapper-lm/tree/master",
                 "issues": "https://github.com/TBlindaruk/request-mapper-lm/issues"
             },
-            "time": "2018-12-15 19:27:37"
+            "time": "2018-12-15 21:39:24"
         },
         {
             "name": "monolog/monolog",
