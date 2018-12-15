@@ -6,13 +6,14 @@ namespace App\Http;
 use App\Http\RequestData\RoomSearchRequestData;
 use App\Http\RequestData\TeachersGetRequestData;
 use Illuminate\Http\Request;
+use Maksi\RequestMapperL\Support\RequestMapperServiceProvider;
 
 /**
  * Class RequestMapperProvider
  *
  * @package App\Http
  */
-class RequestMapperProvider extends \Maksi\RequestMapperL\RequestMapperProvider
+class RequestMapperProvider extends RequestMapperServiceProvider
 {
     /**
      * @param Request $request
