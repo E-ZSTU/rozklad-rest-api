@@ -10,7 +10,7 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "league/fractal": "^0.17.0",
-        "maksi/laravel-request-mapper": "^0.1.1"
+        "maksi/laravel-request-mapper": "dev-mapping-stratgies"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -54,5 +54,11 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/TBlindaruk/laravel-request-mapper"
+        }
+    ]
 }
