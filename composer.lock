@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a8e619e0af2bf433f65e2ec868012134",
-    "content-hash": "57426769e1269d8c23b8794879a3498e",
+    "hash": "d71ba607a8c855c78fb91ffecc38b684",
+    "content-hash": "75469654b3064a53fb8a6cc9434629bc",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -951,26 +951,30 @@
             "time": "2017-06-12 11:04:56"
         },
         {
-            "name": "maksi/request-mapper-lm",
-            "version": "dev-master",
+            "name": "maksi/laravel-request-mapper",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:TBlindaruk/request-mapper-lm.git",
-                "reference": "c39615e5efc306c19733565d6e2c636b3413cf40"
+                "url": "https://github.com/TBlindaruk/laravel-request-mapper.git",
+                "reference": "76369b91056d87f9640dc0eaa863f76f6a593ec6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TBlindaruk/request-mapper-lm/zipball/c39615e5efc306c19733565d6e2c636b3413cf40",
-                "reference": "c39615e5efc306c19733565d6e2c636b3413cf40",
+                "url": "https://api.github.com/repos/TBlindaruk/laravel-request-mapper/zipball/76369b91056d87f9640dc0eaa863f76f6a593ec6",
+                "reference": "76369b91056d87f9640dc0eaa863f76f6a593ec6",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "^1.6",
                 "doctrine/cache": "^1.8",
-                "illuminate/config": "^5.7",
-                "illuminate/http": "^5.7",
-                "illuminate/support": "^5.7",
-                "symfony/validator": "^4.2"
+                "illuminate/contracts": "^5.5",
+                "illuminate/http": "^5.5",
+                "illuminate/support": "^5.5",
+                "symfony/validator": "^4.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.7",
+                "phpunit/phpunit": "^7.5"
             },
             "type": "library",
             "extra": {
@@ -985,17 +989,14 @@
                     "Maksi\\RequestMapperL\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Tetiana Blindaruk",
                     "email": "t.blindaruk@gmail.com"
                 }
             ],
-            "support": {
-                "source": "https://github.com/TBlindaruk/request-mapper-lm/tree/master",
-                "issues": "https://github.com/TBlindaruk/request-mapper-lm/issues"
-            },
-            "time": "2018-12-16 09:48:14"
+            "time": "2018-12-16 15:25:51"
         },
         {
             "name": "monolog/monolog",
@@ -2146,7 +2147,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -2204,16 +2205,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8"
+                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d0cd638f4634c16d8df4508e847f14e9e43168b8",
-                "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/c79c051f5b3a46be09205c73b80b346e4153e494",
+                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494",
                 "shasum": ""
             },
             "require": {
@@ -2259,7 +2260,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-08-06 14:22:27"
+            "time": "2018-09-21 13:07:52"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -4537,9 +4538,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "maksi/request-mapper-lm": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
