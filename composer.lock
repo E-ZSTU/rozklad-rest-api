@@ -956,18 +956,18 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:TBlindaruk/request-mapper-lm.git",
-                "reference": "35525117616befc6987ff56a200a7dd3e6d40556"
+                "reference": "c39615e5efc306c19733565d6e2c636b3413cf40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TBlindaruk/request-mapper-lm/zipball/35525117616befc6987ff56a200a7dd3e6d40556",
-                "reference": "35525117616befc6987ff56a200a7dd3e6d40556",
+                "url": "https://api.github.com/repos/TBlindaruk/request-mapper-lm/zipball/c39615e5efc306c19733565d6e2c636b3413cf40",
+                "reference": "c39615e5efc306c19733565d6e2c636b3413cf40",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "^1.6",
                 "doctrine/cache": "^1.8",
-                "illuminate/contracts": "^5.7",
+                "illuminate/config": "^5.7",
                 "illuminate/http": "^5.7",
                 "illuminate/support": "^5.7",
                 "symfony/validator": "^4.2"
@@ -995,7 +995,7 @@
                 "source": "https://github.com/TBlindaruk/request-mapper-lm/tree/master",
                 "issues": "https://github.com/TBlindaruk/request-mapper-lm/issues"
             },
-            "time": "2018-12-15 23:20:01"
+            "time": "2018-12-16 09:48:14"
         },
         {
             "name": "monolog/monolog",
