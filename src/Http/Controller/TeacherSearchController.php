@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace App\Http\Controller;
 
 use App\Domain\Teacher\Search\TeacherSearchManager;
-use App\Http\RequestData\TeachersGetRequestData;
+use App\Http\RequestData\TeacherSearchRequestData;
 use App\Http\Transformer\TeacherSearch\TeacherSearchTransformer;
 use League\Fractal\Manager as FractalManager;
 use League\Fractal\Resource\Item;
@@ -40,11 +40,11 @@ class TeacherSearchController
     }
 
     /**
-     * @param TeachersGetRequestData $payload
+     * @param TeacherSearchRequestData $payload
      *
      * @return JsonResponse
      */
-    public function __invoke(TeachersGetRequestData $payload): JsonResponse
+    public function __invoke(TeacherSearchRequestData $payload): JsonResponse
     {
         $teacherSearchResult = $this->teacherScheduleSearchManager->find($payload);
 

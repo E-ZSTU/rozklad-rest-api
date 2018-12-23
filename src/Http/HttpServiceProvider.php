@@ -2,6 +2,8 @@
 declare(strict_types = 1);
 
 namespace App\Http;
+
+use App\Http\Provider\RequestMapperProvider;
 use App\Http\Provider\RouteServiceProvider;
 use App\Http\Provider\SubstituteBindingProvider;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -18,7 +20,8 @@ class HttpServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->register(SubstituteBindingProvider::class);
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(RequestMapperProvider::class);
+        $this->app->register(SubstituteBindingProvider::class);
     }
 }

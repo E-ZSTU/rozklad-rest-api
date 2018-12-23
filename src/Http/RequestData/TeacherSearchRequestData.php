@@ -4,15 +4,15 @@ declare(strict_types = 1);
 namespace App\Http\RequestData;
 
 use App\Domain\Teacher\Search\TeacherSearchCriteriaInterface;
-use Maksi\LaravelRequestMapper\RequestData\AllRequestData;
+use Maksi\LaravelRequestMapper\RequestData\RequestData;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class TeachersGetRequestData
+ * Class TeacherSearchRequestData
  *
  * @package App\Http\RequestData
  */
-final class TeachersGetRequestData extends AllRequestData implements TeacherSearchCriteriaInterface
+final class TeacherSearchRequestData extends RequestData implements TeacherSearchCriteriaInterface
 {
     /**
      * @var string
