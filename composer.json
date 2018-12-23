@@ -10,7 +10,7 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "league/fractal": "^0.17.0",
-        "maksi/laravel-request-mapper": "dev-mapping-stratgies"
+        "maksi/laravel-request-mapper": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -28,12 +28,6 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "dont-discover": [
-            ]
         }
     },
     "scripts": {
@@ -54,11 +48,5 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/TBlindaruk/laravel-request-mapper"
-        }
-    ]
+    "prefer-stable": true
 }

@@ -4,7 +4,7 @@ declare(strict_types = 1);
 namespace App\Http\RequestData;
 
 use App\Domain\Room\Search\RoomSearchCriteriaInterface;
-use Maksi\RequestMapperL\DataTransferObject\AllDataObject;
+use Maksi\LaravelRequestMapper\RequestData\AllRequestData;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @package App\Http\RequestData
  */
-final class RoomSearchRequestData extends AllDataObject implements RoomSearchCriteriaInterface
+final class RoomSearchRequestData extends AllRequestData implements RoomSearchCriteriaInterface
 {
     /**
      * @var string
