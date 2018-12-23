@@ -1316,12 +1316,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TBlindaruk/laravel-request-mapper.git",
-                "reference": "b38b3deedc4fd33e1f78e6c384de10a62034f736"
+                "reference": "ababaa206b88cc724c8ed0e0c5e3b1f0922b6cba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TBlindaruk/laravel-request-mapper/zipball/b38b3deedc4fd33e1f78e6c384de10a62034f736",
-                "reference": "b38b3deedc4fd33e1f78e6c384de10a62034f736",
+                "url": "https://api.github.com/repos/TBlindaruk/laravel-request-mapper/zipball/ababaa206b88cc724c8ed0e0c5e3b1f0922b6cba",
+                "reference": "ababaa206b88cc724c8ed0e0c5e3b1f0922b6cba",
                 "shasum": ""
             },
             "require": {
@@ -1359,7 +1359,7 @@
                     "email": "t.blindaruk@gmail.com"
                 }
             ],
-            "time": "2018-12-23 10:45:29"
+            "time": "2018-12-23 15:27:50"
         },
         {
             "name": "monolog/monolog",
