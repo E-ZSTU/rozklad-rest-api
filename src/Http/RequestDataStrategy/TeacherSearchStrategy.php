@@ -5,8 +5,8 @@ namespace App\Http\RequestDataStrategy;
 
 use App\Http\RequestData\TeacherSearchRequestData;
 use Illuminate\Http\Request;
-use Maksi\LaravelRequestMapper\MappingStrategies\StrategyInterface;
-use Maksi\LaravelRequestMapper\RequestData\RequestData;
+use Maksi\LaravelRequestMapper\Filling\RequestData\RequestData;
+use Maksi\LaravelRequestMapper\Filling\Strategies\StrategyInterface;
 
 /**
  * Class TeacherSearchStrategy

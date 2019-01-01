@@ -4,12 +4,14 @@ declare(strict_types = 1);
 namespace App\Http\RequestData;
 
 use App\Domain\Teacher\Search\TeacherSearchCriteriaInterface;
-use Maksi\LaravelRequestMapper\RequestData\RequestData;
+use Maksi\LaravelRequestMapper\Filling\RequestData\RequestData;
+use Maksi\LaravelRequestMapper\Validation\Annotation\Type;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class TeacherSearchRequestData
  *
+ * @Type(type="annotation")
  * @package App\Http\RequestData
  */
 final class TeacherSearchRequestData extends RequestData implements TeacherSearchCriteriaInterface

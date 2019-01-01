@@ -4,12 +4,14 @@ declare(strict_types = 1);
 namespace App\Http\RequestData;
 
 use App\Domain\Room\Search\RoomSearchCriteriaInterface;
-use Maksi\LaravelRequestMapper\RequestData\AllRequestData;
+use Maksi\LaravelRequestMapper\Filling\RequestData\AllRequestData;
+use Maksi\LaravelRequestMapper\Validation\Annotation\Type;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class TeachersGetRequestData
  *
+ * @Type(type="annotation")
  * @package App\Http\RequestData
  */
 final class RoomSearchRequestData extends AllRequestData implements RoomSearchCriteriaInterface

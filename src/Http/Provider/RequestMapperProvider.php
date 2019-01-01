@@ -5,7 +5,7 @@ namespace App\Http\Provider;
 
 use App\Http\RequestDataStrategy\TeacherSearchStrategy;
 use Illuminate\Support\ServiceProvider;
-use Maksi\LaravelRequestMapper\StrategiesHandler;
+use Maksi\LaravelRequestMapper\FillingChainProcessor;
 
 /**
  * Class RequestMapperProvider
@@ -15,10 +15,10 @@ use Maksi\LaravelRequestMapper\StrategiesHandler;
 class RequestMapperProvider extends ServiceProvider
 {
     /**
-     * @param StrategiesHandler $strategiesHandler
+     * @param FillingChainProcessor $fillingChainProcessor
      */
-    public function boot(StrategiesHandler $strategiesHandler): void
+    public function boot(FillingChainProcessor $fillingChainProcessor): void
     {
-        $strategiesHandler->addStrategy($this->app->make(TeacherSearchStrategy::class));
+        $fillingChainProcessor->addStrategy($this->app->make(TeacherSearchStrategy::class));
     }
 }
