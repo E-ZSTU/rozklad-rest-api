@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4aac95782b7a50f73b7ef3bba47d9d43",
-    "content-hash": "3b7aeb38139394513fc5a9e1689cd356",
+    "hash": "56f5a21ab3cf418b02839949c3334c13",
+    "content-hash": "1ec01947cc74894044905168633f8278",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1312,16 +1312,16 @@
         },
         {
             "name": "maksi/laravel-request-mapper",
-            "version": "dev-master",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TBlindaruk/laravel-request-mapper.git",
-                "reference": "70cde2100b8a5110745b4bada62640ce85cb60a4"
+                "reference": "e7ab2a863f007d940a756b79cc02696a5dbc5caf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TBlindaruk/laravel-request-mapper/zipball/70cde2100b8a5110745b4bada62640ce85cb60a4",
-                "reference": "70cde2100b8a5110745b4bada62640ce85cb60a4",
+                "url": "https://api.github.com/repos/TBlindaruk/laravel-request-mapper/zipball/e7ab2a863f007d940a756b79cc02696a5dbc5caf",
+                "reference": "e7ab2a863f007d940a756b79cc02696a5dbc5caf",
                 "shasum": ""
             },
             "require": {
@@ -1366,7 +1366,7 @@
                 "mapper",
                 "request-mapper"
             ],
-            "time": "2019-01-01 14:32:22"
+            "time": "2019-01-01 19:01:28"
         },
         {
             "name": "monolog/monolog",
@@ -3199,16 +3199,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v4.2.1",
+            "version": "v4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "cd35bb14a0e81bd99835e36cac4db1e72ad1939b"
+                "reference": "f89d2fab883a6a20d0d0093537392763cf52f0ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/cd35bb14a0e81bd99835e36cac4db1e72ad1939b",
-                "reference": "cd35bb14a0e81bd99835e36cac4db1e72ad1939b",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/f89d2fab883a6a20d0d0093537392763cf52f0ba",
+                "reference": "f89d2fab883a6a20d0d0093537392763cf52f0ba",
                 "shasum": ""
             },
             "require": {
@@ -3284,7 +3284,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2018-12-05 08:06:11"
+            "time": "2019-01-06 14:13:54"
         },
         {
             "name": "symfony/var-dumper",
@@ -5285,9 +5285,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "maksi/laravel-request-mapper": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
